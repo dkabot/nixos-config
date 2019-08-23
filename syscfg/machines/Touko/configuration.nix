@@ -3,7 +3,7 @@
 { config, ... }:
 
 {
-  imports = [ 
+  imports = [
       # Import the results of the hardware scan and apply common configuration.
       ./hardware-configuration.nix
       ../../modules/common.nix
