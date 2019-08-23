@@ -1,9 +1,16 @@
 # Naomi's standard home configuration for all systems.
 { config, pkgs, ... }:
 
+let
+  home-manager = builtins.fetchGit {
+    url = "https://github.com/rycee/home-manager.git";
+  };
+
+in
+
 {
   imports = [
-    "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/master.tar.gz}/nixos"
+    "${home-manager}/nixos"
     # Dynamically importing per-machine home configs would be cool but looks infeasible.
     #(../../machines + "/${config.networking.hostName}" + /naomi/home.nix)
   ];
@@ -17,10 +24,10 @@
 
     programs.firefox.enable = true;
 
-    programs.git {
+    programs.git = {
       enable = true;
       userName = "dkabot";
-      useremail = "1316469+dkabot@users.noreply.github.com";
+      userEmail = "1316469+dkabot@users.noreply.github.com";
     };
 
     home.sessionVariables = {
