@@ -1,6 +1,6 @@
 # NixOS system-specific configuration file for Kagamiin.
 
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -13,6 +13,11 @@
       ../../modules/surface-kernel.nix
       # Log naomi in automatically.
       ../../modules/autologin-naomi.nix
+  ];
+
+  # Enable Surface firmware.
+  hardware.firmware = with pkgs; [
+    surface-firmware-book-2-15
   ];
 
   # LUKS configuration.

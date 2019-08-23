@@ -4,6 +4,8 @@
 
 {
   imports = [
+    # Apply nixpkgs configuration.
+    ../../pkgs/nixpkgs.nix
     # Bring in relevant user configuration.
     ../users
   ];
@@ -12,9 +14,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 3;
-
-  # Enable nonfree software. :(
-  nixpkgs.config.allowUnfree = true;
 
   # Use a tmpfs for /tmp.
   boot.tmpOnTmpfs = true;
@@ -45,7 +44,7 @@
 
   # Add basic packages for system-wide scope.
   environment.systemPackages = with pkgs; [
-    htop git mkpasswd
+    htop git mkpasswd unzip
   ];
 
 }
