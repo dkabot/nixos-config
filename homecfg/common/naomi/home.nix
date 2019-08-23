@@ -20,6 +20,7 @@ in
       pkgs.discord pkgs.slack
       pkgs.meld
       pkgs.filezilla
+      pkgs.neofetch
     ];
 
     programs.firefox.enable = true;
@@ -41,6 +42,9 @@ in
     dconf.settings = {
       "org/gnome/shell" = {
          favorite-apps = ["firefox.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Terminal.desktop"];
+      };
+      "apps/gnome-power-manager/timeout" = {
+         sleep_computer_ac = 0;
       };
     };
 
