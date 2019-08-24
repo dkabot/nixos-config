@@ -38,7 +38,6 @@ in
 
     home.sessionVariables = {
       EDITOR = "nano";
-      MOZ_USE_XINPUT2 = 1;
     };
 
     # Apply Adwaita-dark theme, because it is nice.
