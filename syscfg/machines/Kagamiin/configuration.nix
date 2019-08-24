@@ -15,6 +15,11 @@
       ../../modules/autologin-naomi.nix
   ];
 
+  # Add control package.
+  environment.systemPackages = with pkgs; [
+    linux-surface-control
+  ];
+
   # Enable Surface firmware.
   hardware.firmware = with pkgs; [
     surface-firmware-book-2-15

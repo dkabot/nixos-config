@@ -1,10 +1,10 @@
-# Firmware for Surface devices.
+#l Firmware for Surface devices.
 
-{ stdenv, lib, fetchFromGitHub, dmidecode, unzip, surfaceModel, ... }:
+{ stdenv, fetchFromGitHub, unzip, surfaceModel }:
 
 stdenv.mkDerivation {
   version = "1.0";
-  name = "surface-firmware-${lib.toLower surfaceModel}";
+  name = "surface-firmware-${stdenv.lib.toLower surfaceModel}";
 
   src = fetchFromGitHub {
     owner = "jakeday";
@@ -13,7 +13,7 @@ stdenv.mkDerivation {
     sha256 = "0982yypsqdv98sy93siz7ac12x5bi3bdk6k5f28yzin2gc4yvm0n";
   };
 
-  buildInputs = [ unzip dmidecode ];
+  buildInputs = [ unzip ];
 
   phases = [ "unpackPhase" "installPhase" ];
 
