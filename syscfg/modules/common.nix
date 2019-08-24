@@ -47,4 +47,10 @@
     htop git mkpasswd unzip
   ];
 
+  # Additional fonts.
+  fonts.fonts = with pkgs; [
+    ipafont # Japanese
+    twemoji-color-font # Emoji
+  ];
+
 }
