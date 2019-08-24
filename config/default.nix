@@ -5,7 +5,7 @@
 {
   imports = [
     # Apply nixpkgs configuration.
-    ../../pkgs/nixpkgs.nix
+    ../pkgs/nixpkgs.nix
     # Bring in relevant user configuration.
     ../users
   ];

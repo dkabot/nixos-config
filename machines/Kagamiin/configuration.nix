@@ -6,13 +6,13 @@
   imports = [
       # Import the results of the hardware scan and apply common configuration.
       ./hardware-configuration.nix
-      ../../modules/common.nix
+      ../../config
       # Apply HiDPI console.
-      ../../modules/hidpi-console.nix
+      ../../config/hidpi-console.nix
       # Apply Jakeday kernel.
-      ../../modules/surface-kernel.nix
+      ../../config/surface-kernel.nix
       # Log naomi in automatically.
-      ../../modules/autologin-naomi.nix
+      (import ../../config/gdm-autologin.nix { inherit config; username = "naomi"; })
   ];
 
   # Add control package.

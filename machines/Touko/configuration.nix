@@ -6,9 +6,9 @@
   imports = [
       # Import the results of the hardware scan and apply common configuration.
       ./hardware-configuration.nix
-      ../../modules/common.nix
+      ../../config
       # Log naomi in automatically.
-      ../../modules/autologin-naomi.nix
+      (import ../../config/gdm-autologin.nix { inherit config; username = "naomi"; })
   ];
 
   # LUKS configuration.

@@ -17,9 +17,9 @@ Installation:
 
 3) Symlink machine config.
 `ln -s /mnt/cfg /cfg`
-`ln -s /cfg/syscfg/machines/HOSTNAME/configuration.nix /mnt/etc/nixos/configuration.nix`
+`ln -s /cfg/machines/HOSTNAME/configuration.nix /mnt/etc/nixos/configuration.nix`
 
 4) Pray.
 `nixos-generate-config --root /mnt`
-`mv /mnt/etc/nixos/hardware-configuration.nix /mnt/cfg/syscfg/machines/HOSTNAME/hardware-configuration.nix`
+`mv /mnt/etc/nixos/hardware-configuration.nix /mnt/cfg/machines/HOSTNAME/hardware-configuration.nix`
 `nixos-install`
