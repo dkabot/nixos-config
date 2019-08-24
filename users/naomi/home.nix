@@ -49,24 +49,32 @@ in
     dconf.settings = {
       # Set the favorites list in the Dash.
       "org/gnome/shell" = {
-         favorite-apps = ["firefox.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Terminal.desktop"];
+        favorite-apps = ["firefox.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Terminal.desktop"];
       };
       # Prevent automatic sleep while on AC power.
       "apps/gnome-power-manager/timeout" = {
-         sleep_computer_ac = 0;
+        sleep_computer_ac = 0;
       };
       # Sort folders before files in Nautilus and the file chooser.
       "org/gnome/nautilus/preferences" = {
-         sort-directories-first = true;
+        sort-directories-first = true;
       };
       "org/gtk/settings/file-chooser" = {
-         sort-directories-first = true;
+        sort-directories-first = true;
+      };
+      # Set desktop and lock screen backgrounds.
+      "org/gnome/desktop/background" = {
+        picture-uri = "file:///home/naomi/.config/background.png";
+      };
+      "org/gnome/desktop/screensaver" = {
+        picture-uri = "file:///home/naomi/.config/background.png";
       };
 
     };
 
     xdg.enable = true;
     xdg.configFile."mimeapps.list".source = ./dotfiles/mimeapps.list;
+    xdg.configFile."background.png".source = ./dotfiles/background.png;
 
   };
 }
