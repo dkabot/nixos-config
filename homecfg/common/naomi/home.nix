@@ -16,11 +16,10 @@ in
   ];
 
   home-manager.users.naomi = {
-    home.packages = [
-      pkgs.discord pkgs.slack
-      pkgs.meld
-      pkgs.filezilla
-      pkgs.neofetch
+    home.packages = with pkgs; [
+      discord slack bitwarden
+      meld filezilla
+      neofetch
     ];
 
     programs.firefox.enable = true;
