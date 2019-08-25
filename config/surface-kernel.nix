@@ -12,6 +12,11 @@ let
 in
 
 {
+  # Apply necessary further configuration.
+  imports = [
+    ./surface-config.nix
+  ];
+
   # Set the kernel version.
   boot.kernelPackages = pkgs.linuxPackages_5_2;
 
