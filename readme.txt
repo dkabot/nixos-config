@@ -13,9 +13,11 @@ Installation:
 `chown -R 1000:users /mnt/cfg`
 
 2) Generate password files.
-`mkpasswd -m sha-512 > /mnt/cfg/syscfg/users/USERNAME.hashedPassword`
+`mkpasswd -m sha-512 > /mnt/cfg/users/root.hashedPassword` # Optional
+`mkpasswd -m sha-512 > /mnt/cfg/users/USERNAME/USERNAME.hashedPassword`
 
 3) Symlink machine config.
+`mkdir -p /mnt/etc/nixos`
 `ln -s /mnt/cfg /cfg`
 `ln -s /cfg/machines/HOSTNAME/configuration.nix /mnt/etc/nixos/configuration.nix`
 
