@@ -18,20 +18,20 @@
       fsType = "ext4";
     };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/5ADD-4EA6";
-      fsType = "vfat";
-    };
-
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/42cca5ee-7670-4262-8ea9-caf646572689";
       fsType = "ext4";
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/5ADD-4EA6";
+      fsType = "vfat";
     };
 
   swapDevices =
     [ { device = "/dev/disk/by-uuid/fd1faf0b-299a-441d-b57b-cff73a814195"; }
     ];
 
-  nix.maxJobs = lib.mkDefault 4;
+  nix.maxJobs = lib.mkDefault 8;
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 }
