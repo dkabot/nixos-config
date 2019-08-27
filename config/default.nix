@@ -39,6 +39,8 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome3.enable = true;
   services.dbus.packages = with pkgs; [ gnome3.dconf ];
+  # Exclude Totem, so Celluloid can be used instead.
+  environment.gnome3.excludePackages = [ pkgs.gnome3.totem ];
 
   # Remove 'xterm' entry in display manager
   services.xserver.desktopManager.xterm.enable = false;
@@ -59,6 +61,7 @@
   # Add basic packages for system-wide scope.
   environment.systemPackages = with pkgs; [
     htop git mkpasswd unzip
+    celluloid
   ];
 
   # Additional fonts.
