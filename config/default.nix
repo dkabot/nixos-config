@@ -21,9 +21,18 @@
   # Set the time zone.
   time.timeZone = "America/New_York";
 
+  # Enable Bluetooth.
+  hardware.bluetooth.enable = true; # Implied 'true' with GNOME.
+
   # Enable sound.
   sound.enable = true;
-  hardware.pulseaudio.enable = true; # Implied 'true' with GNOME.
+  hardware.pulseaudio = {
+    enable = true; # Implied 'true' with GNOME.
+    # Add extra modules for nicer Bluetooth codec support.
+    extraModules = [ pkgs.pulseaudio-modules-bt ];
+    # Full PulseAudio package is necessary for bluetooth audio support.
+    package = pkgs.pulseaudioFull;
+  };
 
   # Enable GNOME desktop environment.
   services.xserver.enable = true;
