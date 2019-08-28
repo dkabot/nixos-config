@@ -13,6 +13,8 @@
       ../../config/surface-kernel.nix
       # Log naomi in automatically.
       (import ../../config/gdm-autologin.nix { inherit config; username = "naomi"; })
+      # Machine-specific home configuration for naomi.
+      ../../users/naomi/machines/Mimi/home.nix
   ];
 
   # Enable Surface firmware.

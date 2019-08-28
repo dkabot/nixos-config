@@ -69,10 +69,6 @@ in
       "org/gnome/desktop/screensaver" = {
         picture-uri = "file:///home/naomi/.config/background.png";
       };
-      # Enable fractional scaling. Scale factor itself is set in ~/.config/monitors.xml
-      "org/gnome/mutter" = {
-        experimental-features = [ "scale-monitor-framebuffer" ];
-      };
 
     };
 
