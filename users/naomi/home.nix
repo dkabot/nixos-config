@@ -1,23 +1,7 @@
 # Naomi's standard home configuration for all systems.
 { config, pkgs, ... }:
 
-let
-  home-manager = builtins.fetchGit {
-    url = "https://github.com/rycee/home-manager.git";
-    rev = "eb1b86a5ec7baf1a1ce2c277d568a8751c24a7ee";
-    #ref = "release-19.09";
-  };
-
-in
-
 {
-  imports = [
-    # Import home-manager itself.
-    "${home-manager}/nixos"
-    # Dynamically importing per-machine home configs would be cool but looks infeasible.
-    #(../../machines + "/${config.networking.hostName}" + /naomi/home.nix)
-  ];
-
   home-manager.users.naomi = {
     # User-scope packages; not neeeded system-wide.
     home.packages = with pkgs; [
