@@ -49,11 +49,11 @@ in
     dconf.settings = {
       # Set the favorites list in the Dash.
       "org/gnome/shell" = {
-        favorite-apps = ["firefox.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Terminal.desktop"];
+        favorite-apps = [ "firefox.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Terminal.desktop" ];
       };
       # Prevent automatic sleep while on AC power.
-      "apps/gnome-power-manager/timeout" = {
-        sleep_computer_ac = 0;
+      "org/gnome/settings-daemon/plugins/power" = {
+        sleep-inactive-ac-type = "nothing";
       };
       # Sort folders before files in Nautilus and the file chooser.
       "org/gnome/nautilus/preferences" = {
@@ -68,6 +68,10 @@ in
       };
       "org/gnome/desktop/screensaver" = {
         picture-uri = "file:///home/naomi/.config/background.png";
+      };
+      # Enable fractional scaling. Scale factor itself is set in ~/.config/monitors.xml
+      "org/gnome/mutter" = {
+        experimental-features = [ "scale-monitor-framebuffer" ];
       };
 
     };
