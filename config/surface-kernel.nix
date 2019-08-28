@@ -6,7 +6,7 @@ let
   linux-surface = builtins.fetchGit {
     url = "https://github.com/qzed/linux-surface.git";
     ref = "v5.2";
-    rev = "206e3255dddc35026883eee44aa7ba7c9f3081e9";
+    rev = "83e67e4a27398416f46461d6f324634915f7e1c3";
   } + /patches/5.2;
 
 in
