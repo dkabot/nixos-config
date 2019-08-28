@@ -24,6 +24,7 @@ in
       discord slack bitwarden
       meld filezilla
       neofetch
+      multimc
     ];
 
     # Firefox could be added as a package above, but this allows for expansion if desired.
