@@ -21,6 +21,9 @@
   # Set the time zone.
   time.timeZone = "America/New_York";
 
+  # Automatically optimize the Nix store.
+  nix.autoOptimiseStore = true;
+
   # Enable Bluetooth.
   hardware.bluetooth.enable = true; # Implied 'true' with GNOME.
 
