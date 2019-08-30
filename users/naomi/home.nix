@@ -5,14 +5,21 @@
   home-manager.users.naomi = {
     # User-scope packages; not neeeded system-wide.
     home.packages = with pkgs; [
+      # Electron
       discord slack bitwarden
-      meld filezilla
+      # GUI Utilities
+      meld filezilla syncthing-gtk
+      # Terminal Utilities
       neofetch
-      multimc
+      # Games
+      multimc steam lutris
     ];
 
     # Firefox could be added as a package above, but this allows for expansion if desired.
     programs.firefox.enable = true;
+
+    # Enable SyncThing service.
+    services.syncthing.enable = true;
 
     # Basic git configuration.
     programs.git = {
