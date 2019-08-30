@@ -18,6 +18,9 @@
   # Use a tmpfs for /tmp.
   boot.tmpOnTmpfs = true;
 
+  # Enable NTFS support.
+  boot.supportedFilesystems = [ "ntfs" ];
+
   # Set the time zone.
   time.timeZone = "America/New_York";
 
