@@ -11,6 +11,9 @@
       (import ../../config/gdm-autologin.nix { inherit config; username = "naomi"; })
   ];
 
+  # Enable TLP.
+  services.tlp.enable = true;
+
   # LUKS configuration.
   boot.initrd.luks.devices = [
     {
