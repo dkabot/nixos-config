@@ -3,6 +3,11 @@
 { config, pkgs, ... }:
 
 {
+  # Apply standard config.
+  imports = [
+    ./default.nix
+  ];
+
   # Enable Bluetooth.
   hardware.bluetooth.enable = true;
 

@@ -6,7 +6,6 @@
   imports = [
       # Import the results of the hardware scan and apply common configuration.
       ./hardware-configuration.nix
-      ../../config
       ../../config/gnome.nix # GNOME Desktop.
       # Log naomi in automatically.
       (import ../../config/gdm-autologin.nix { inherit config; username = "naomi"; })
