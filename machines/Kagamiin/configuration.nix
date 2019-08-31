@@ -7,12 +7,15 @@
       # Import the results of the hardware scan and apply common configuration.
       ./hardware-configuration.nix
       ../../config
+      ../../config/gnome.nix # GNOME desktop.
       # Apply HiDPI console.
       ../../config/hidpi-console.nix
       # Apply Jakeday kernel.
       ../../config/surface-kernel.nix
       # Log naomi in automatically.
       (import ../../config/gdm-autologin.nix { inherit config; username = "naomi"; })
+      # Machine-specific home configuration for naomi.
+      ../../users/naomi/machines/Kagamiin/home.nix
   ];
 
   # Add control package.

@@ -3,6 +3,11 @@
 { config, pkgs, ... }:
 
 {
+  # Apply base GNOME settings.
+  imports = [
+    ../../gnome.nix
+  ];
+
   home-manager.users.naomi = {
     dconf.enable = true;
     dconf.settings = {
