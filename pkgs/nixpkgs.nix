@@ -8,7 +8,12 @@
     config.allowUnfree = true;
 
     overlays = [ (self: super: {
+        # Theming
         chicago95-theme = super.callPackage ./chicago95 { };
+        sweet-gtk-theme = super.callPackage ./sweet { };
+        candy-icons = super.callPackage ./candy-icons { };
+        sweet-folders = super.callPackage ./sweet-folders { };
+        # Surface-related packages
         linux-surface-control = super.callPackage ./linux-surface-control { };
         surface-firmware-book-2-15 = super.callPackage ./surface-firmware { surfaceModel = "Book-2-15"; };
         surface-firmware-go = super.callPackage ./surface-firmware { surfaceModel = "Go"; };

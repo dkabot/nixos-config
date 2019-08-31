@@ -1,11 +1,19 @@
 # Naomi's home configuration for GNOME desktops.
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   home-manager.users.naomi = {
-    # Apply Adwaita-dark theme, because it is nice.
+    # Apply Sweet-Dark theme and accompanying icon theme.
     gtk.enable = true;
-    gtk.theme.name = "Adwaita-dark";
+    gtk.theme.name = "Sweet-Dark";
+    gtk.theme.package = pkgs.sweet-gtk-theme;
+    gtk.iconTheme.name = "Sweet-Purple";
+    gtk.iconTheme.package = pkgs.sweet-folders;
+    # Additional icon themes relied upon by Sweet-Purple.
+    home.packages = with pkgs; [
+      candy-icons zafiro-icons
+    ];
+
 
     # Various GNOME settings.
     dconf.enable = true;
