@@ -48,6 +48,10 @@
       "org/gnome/desktop/wm/preferences" = {
         button-layout = "appmenu:minimize,maximize,close";
       };
+      # Set 12 hour clock format.
+      "org/gnome/desktop/interface" = {
+        clock-format = "12h";
+      };
       # Apply shell theme.
       "org/gnome/shell/extensions/user-theme" = {
         name = "Sweet-Dark";
@@ -76,6 +80,7 @@
         enable-pinned-apps = false; # Show full application menu instead of pins.
         menu-hotkey = "SUPER_L"; # Open with left super key.
         multi-monitor = true; # Enable multi monitor support.
+        show-software-shortcut = fale; # Hide GNOME Software shortcut.
       };
     };
 
