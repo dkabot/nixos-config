@@ -80,7 +80,7 @@
         enable-pinned-apps = false; # Show full application menu instead of pins.
         menu-hotkey = "SUPER_L"; # Open with left super key.
         multi-monitor = true; # Enable multi monitor support.
-        show-software-shortcut = fale; # Hide GNOME Software shortcut.
+        show-software-shortcut = false; # Hide GNOME Software shortcut.
       };
     };
 
