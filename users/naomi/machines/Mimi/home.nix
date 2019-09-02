@@ -8,16 +8,12 @@
     ../../gnome.nix
   ];
 
+  # Enable fractional scaling. Scale factor itself is set in ~/.config/monitors.xml
   home-manager.users.naomi = {
     dconf.enable = true;
     dconf.settings = {
-      # Enable fractional scaling. Scale factor itself is set in ~/.config/monitors.xml
       "org/gnome/mutter" = {
         experimental-features = [ "scale-monitor-framebuffer" ];
-      };
-      # Double arc-menu height to hackily account for hidpi. This would break horribly on external monitors, though...
-      "org/gnome/shell/extensions/arc-menu" = {
-        menu-height = 1100;
       };
     };
   };
