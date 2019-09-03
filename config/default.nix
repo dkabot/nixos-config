@@ -27,6 +27,9 @@
   # Automatically optimize the Nix store.
   nix.autoOptimiseStore = true;
 
+  # Use sandboxing when building.
+  nix.useSandbox = true;
+
   # Add basic packages for system-wide scope.
   environment.systemPackages = with pkgs; [
     htop git mkpasswd unzip wget
