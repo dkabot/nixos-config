@@ -15,6 +15,8 @@
       candy-icons zafiro-icons
       # Extensions.
       gnomeExtensions.dash-to-panel gnomeExtensions.arc-menu
+      # GNOME-specific applications.
+      gnome3.gnome-tweaks
     ];
 
     # Various GNOME settings.
