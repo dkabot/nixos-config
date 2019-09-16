@@ -17,6 +17,8 @@
         sweet = super.callPackage ./sweet { };
         candy-icons = super.callPackage ./candy-icons { };
         sweet-folders = super.callPackage ./sweet-folders { };
+        # Applications
+        sidequest = super.callPackage ./sidequest { };
       }
     ) ];
 

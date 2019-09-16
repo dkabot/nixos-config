@@ -8,7 +8,7 @@
       # Electron
       discord slack bitwarden
       # GUI Utilities
-      meld filezilla syncthing-gtk gimp
+      meld filezilla syncthing-gtk gimp sidequest
       # Terminal Utilities
       neofetch
       # Games
