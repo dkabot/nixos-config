@@ -20,6 +20,8 @@
 
   # Enable NTFS support.
   boot.supportedFilesystems = [ "ntfs" ];
+  # Enable ExFAT support.
+  boot.extraModulePackages = [ config.boot.kernelPackages.exfat-nofuse ];
 
   # Set the time zone.
   time.timeZone = "America/New_York";
