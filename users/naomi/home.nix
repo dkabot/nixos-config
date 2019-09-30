@@ -12,7 +12,7 @@
       # Terminal Utilities
       neofetch
       # Games
-      multimc steam lutris retroarch
+      multimc steam lutris #retroarch
     ];
 
     # Firefox could be added as a package above, but this allows for expansion if desired.
