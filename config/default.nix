@@ -34,7 +34,7 @@
 
   # Add basic packages for system-wide scope.
   environment.systemPackages = with pkgs; [
-    htop git mkpasswd unzip wget
+    htop git mkpasswd unzip wget p7zip usbutils
   ];
 
 }
