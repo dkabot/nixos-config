@@ -24,7 +24,7 @@
 
   # Enable Surface firmware.
   hardware.firmware = with pkgs; [
-    surface-firmware-book-2-15
+    surface-firmware
   ];
 
   # LUKS configuration.

@@ -6,6 +6,11 @@
 {
   # Power management config from qzed repo.
   config.powerManagement.powerDownCommands = ''
+    # Disable bluetooth if no device is connected
+    if ps cax | grep bluetoothd && ! bluetoothctl info; then
+      bluetoothctl power off
+    fi
+
     # handle wifi issues
     ${pkgs.kmod}/bin/modprobe -r mwifiex_pcie;
     ${pkgs.kmod}/bin/modprobe -r mwifiex;
@@ -13,12 +18,21 @@
   '';
 
   config.powerManagement.resumeCommands = ''
+    # Restart bluetooth
+    if ps cax | grep bluetoothd; then
+      bluetoothctl power on
+    fi
+
     # handle wifi issues: complete cycle
     ${pkgs.kmod}/bin/modprobe cfg80211;
     ${pkgs.kmod}/bin/modprobe mwifiex;
     ${pkgs.kmod}/bin/modprobe mwifiex_pcie;
     echo 1 > /sys/bus/pci/rescan
-    systemctl restart NetworkManager.service
+
+    if [ -x "$(command -v nmcli)" ]  && [ "$(nmcli net)" = "enabled" ]; then
+      nmcli net off
+      nmcli net on
+    fi
   '';
 
   # Modprobe config from jakeday repo.

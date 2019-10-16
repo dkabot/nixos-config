@@ -19,7 +19,7 @@
 
   # Enable Surface firmware.
   hardware.firmware = with pkgs; [
-    surface-firmware-go
+    surface-firmware
   ];
 
   # LUKS configuration.
