@@ -9,7 +9,7 @@
       ../../config/gnome.nix # GNOME Desktop.
       # Apply HiDPI console.
       ../../config/hidpi-console.nix
-      # Apply Surface configs without Jakeday kernel.
+      # Apply qzed kernel.
       ../../config/surface-kernel.nix
       # Log naomi in automatically.
       (import ../../config/gdm-autologin.nix { inherit config; username = "naomi"; })

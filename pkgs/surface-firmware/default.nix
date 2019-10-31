@@ -40,7 +40,7 @@ stdenv.mkDerivation {
 
   meta = with stdenv.lib; {
     description = "Firmware for Surface devices";
-    homepage = https://github.com/jakeday/linux-surface;
+    homepage = https://github.com/qzed/linux-surface;
     license = licenses.unfreeRedistributableFirmware;
     platforms = with platforms; linux;
   };

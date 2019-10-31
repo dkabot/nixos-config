@@ -1,4 +1,4 @@
-# Additional configuration from the Jakeday kernel repos for Surface devices.
+# Additional configuration from the qzed kernel repos for Surface devices.
 # This file is separate in the event of a device that benefits from the config but does not require the entire kernel.
 
 { config, pkgs, ... }:
@@ -35,7 +35,7 @@
     fi
   '';
 
-  # Modprobe config from jakeday repo.
+  # Modprobe config from qzed repo.
   config.boot.extraModprobeConfig = ''
     # ath10k.conf
     options ath10k_core skip_otp=y
@@ -47,7 +47,7 @@
     softdep soc_button_array pre: pinctrl_sunrisepoint
   '';
 
-  # Initramfs config from jakeday repo.
+  # Initramfs config from qzed repo.
   config.boot.initrd.kernelModules = [
     "hid"
     "hid_sensor_hub"

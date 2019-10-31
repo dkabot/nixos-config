@@ -1,4 +1,4 @@
-# Builds the Jakeday kernel for Surface devices.
+# Builds the qzed kernel for Surface devices.
 
 { config, pkgs, ... }:
 
@@ -6,7 +6,7 @@ let
   linux-surface = builtins.fetchGit {
     url = "https://github.com/qzed/linux-surface.git";
     ref = "master";
-    rev = "0984748ad55175d07eeca6f5617f84b42bbc657f";
+    rev = "dcf51e95e7d04886371f8af1ec05104697f129f6";
   } + /patches/5.3;
 
 in
@@ -19,6 +19,17 @@ in
 
   # Set the kernel version.
   boot.kernelPackages = pkgs.linuxPackages_5_3;
+  # Template for if a specific subversion is necessary.
+  #boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_5_3.override {
+  #  argsOverride = rec {
+  #    version = "5.3.6";
+  #    modDirVersion = "5.3.6"; # Needs to end in .0 if there's no .X
+  #    src = fetchurl {
+  #      url = "mirror://kernel/linux/kernel/v5.x/linux-${version}.tar.xz";
+  #      sha256 = "07zcfpj6ras7mmazny5xjwf8v6l5hwdgnla21sqpppl48ylj2h78";
+  #    };
+  #  };
+  #});
 
   # Define the kernel patches. The following URLs proved highly useful in knowing what config options are needed:
   # https://github.com/StollD/fedora-linux-surface/blob/master/config.surface
@@ -60,8 +71,8 @@ in
       name = "wifi";
       patch = "${linux-surface}/0007-wifi.patch";
     } {
-      name = "use-legacy-i915-driver";
-      patch = "${linux-surface}/0008-use-legacy-i915-driver.patch";
+      name = "legacy-i915";
+      patch = "${linux-surface}/0008-legacy-i915.patch";
     } {
       name = "ipts";
       patch = "${linux-surface}/0009-ipts.patch";
