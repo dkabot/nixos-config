@@ -1,11 +1,11 @@
-{ stdenv, lib, fetchurl, buildFHSUserEnv, makeDesktopItem, makeWrapper, atomEnv, libuuid, at-spi2-atk, xz }:
+{ stdenv, lib, fetchurl, buildFHSUserEnv, makeDesktopItem, makeWrapper, atomEnv, libuuid, at-spi2-atk, icu, openssl, zlib }:
 	let
 		pname = "sidequest";
-		version = "0.7.0";
+		version = "0.7.4";
 
 		desktopItem = makeDesktopItem rec {
 			name = "SideQuest";
-			exec = "sidequest";
+			exec = "SideQuest";
 			desktopName = name;
 			genericName = "VR App Store";
 			categories = "Settings;PackageManager;";
@@ -16,12 +16,10 @@
 
 			src = fetchurl {
 				url = "https://github.com/the-expanse/SideQuest/releases/download/v${version}/SideQuest-${version}.tar.xz";
-                                sha256 = "044ckn1wlpgg0wsdnp09qi9kxyg1jrgdk00s3v71pnj5shg6w652";
+				sha256 = "1cnihx6bwsih3f3czhagy4zc9fy5s6yqjny4vy93z92ghawsxqih";
 			};
 
 			buildInputs = [ makeWrapper ];
-
-                        nativeBuildInputs = [ xz ];
 
 			buildCommand = ''
 				mkdir -p "$out/lib/SideQuest" "$out/bin"
@@ -31,8 +29,8 @@
 
 				fixupPhase
 
-				#mkdir -p "$out/share/applications"
-				#ln -s "${desktopItem}/share/applications/*" "$out/share/applications"
+				# mkdir -p "$out/share/applications"
+				# ln -s "${desktopItem}/share/applications/*" "$out/share/applications"
 
 				patchelf \
 					--set-interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)" \
@@ -41,7 +39,7 @@
 			'';
 		};
 	in buildFHSUserEnv {
-		name = "sidequest";
+		name = "SideQuest";
 
 		passthru = {
 			inherit pname version;
@@ -51,20 +49,21 @@
 				homepage = "https://github.com/the-expanse/SideQuest";
 				downloadPage = "https://github.com/the-expanse/SideQuest/releases";
 				license = licenses.mit;
-				maintainers = [ maintainers.joepie91 ];
+				maintainers = with maintainers; [ joepie91 rvolosatovs ];
 				platforms = [ "x86_64-linux" ];
 			};
 		};
 
 		targetPkgs = pkgs: [
 			sidequest
+			# Needed in the environment on runtime, to make QuestSaberPatch work
+			icu openssl zlib
 		];
 
 		extraInstallCommands = ''
 			mkdir -p "$out/share/applications"
-			ln -s "${desktopItem}/share/applications/*" "$out/share/applications"
+			ln -s ${desktopItem}/share/applications/* "$out/share/applications"
 		'';
 
 		runScript = "sidequest";
 	}
-
