@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "candy-icons";
-  version = "798e662";
+  version = "d0a49f869ee212489154c000c754166c14ad83f3";
 
   src = fetchFromGitHub {
     owner = "EliverLara";
     repo = pname;
     rev = version;
-    sha256 = "0hd8s3bjprx34fw6464vihn8n48rybyy82ah93b6g18zvq35vmgi";
+    sha256 = "0xm4md49pqkmmalrpmh95x0p980g8p0cn74dzmsalz7ghdymyx98";
   };
 
   nativeBuildInputs = [ gtk3 ];

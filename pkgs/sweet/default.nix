@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "Sweet-gtk-theme";
-  version = "1.10.5";
+  version = "2019-10-31";
 
   srcs = [
     # Sweet
@@ -10,35 +10,35 @@ stdenv.mkDerivation rec {
       url = "https://github.com/EliverLara/Sweet.git";
       name = "Sweet";
       ref = "master";
-      rev = "50380d25b62a630548674dad6d994a23f4397fd3";
+      rev = "1bdef4cb9a0b25c6e616e7e3b65ab13a035971b1";
     })
     # Sweet-Ambar-Blue
     (fetchGit {
       url = "https://github.com/EliverLara/Sweet.git";
       name = "Sweet-Ambar-Blue";
       ref = "Ambar-Blue";
-      rev = "6422fe9b16d6c7256d74b6b0e4ccdcaa9c9ed295";
+      rev = "f655f5557685c075dfe7f5d47be75a5aeeadbb3b";
     })
     # Sweet-Ambar
     (fetchGit {
       url = "https://github.com/EliverLara/Sweet.git";
       name = "Sweet-Ambar";
       ref = "Ambar";
-      rev = "84850de5b3c41525e3a2524d13bdae0491954ab3";
+      rev = "c286cc4f344405ecdf5c9f582932c1dc9563fbc4";
     })
     # Sweet-Mars
     (fetchGit {
       url = "https://github.com/EliverLara/Sweet.git";
       name = "Sweet-mars";
       ref = "mars";
-      rev = "97618727ad6221954a7605c8a528db9cfd5cc6f7";
+      rev = "904b218b90b23c7e6f4f46d65be1083f6576c434";
     })
     # Sweet-Nova (AKA Sweet-Dark)
     (fetchGit {
       url = "https://github.com/EliverLara/Sweet.git";
       name = "Sweet-Dark";
       ref = "nova";
-      rev = "6aea872746c1d9173decfa3a339ac5cd15318f0f";
+      rev = "b1c6e87a524abc9013c113d7d1e94ba6d1df414d";
     })
   ];
 
