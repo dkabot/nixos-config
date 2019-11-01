@@ -22,6 +22,12 @@
     linux-surface-control
   ];
 
+  # Enable GPU switching.
+  hardware.bumblebee = {
+    enable = true;
+    pmMethod = "none"; # Using linux-surface-control to control power; leaving this on "auto" installs bbswitch, which we don't need.
+  };
+
   # Enable Surface firmware.
   hardware.firmware = with pkgs; [
     surface-firmware
@@ -41,6 +47,6 @@
   networking.hostName = "Kagamiin";
 
   # The danger setting; see 'default-configuration.nix' for details.
-  system.stateVersion = "19.09";
+  system.stateVersion = "20.03";
 
 }
