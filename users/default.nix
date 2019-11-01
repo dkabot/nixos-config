@@ -5,8 +5,8 @@
 let
   home-manager = builtins.fetchGit {
     url = "https://github.com/rycee/home-manager.git";
-    rev = "eb1b86a5ec7baf1a1ce2c277d568a8751c24a7ee";
-    #ref = "release-19.09";
+    rev = "6b6f759e7a3235027a0b38b724ed4fb9480bf608";
+    #ref = "release-20.03";
   };
   readHashedPassword = file:
     lib.fileContents file;
