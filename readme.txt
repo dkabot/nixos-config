@@ -25,3 +25,19 @@ Installation:
 `nixos-generate-config --root /mnt`
 `mv /mnt/etc/nixos/hardware-configuration.nix /mnt/cfg/machines/HOSTNAME/hardware-configuration.nix`
 `nixos-install`
+
+
+Home Manager isn't working? Try the following:
+
+1) Update your version numbers, make sure that home-manager is on a current commit and that your stateVersion is accurate.
+`nano /cfg/users/default.nix`
+`nano /cfg/machines/HOSTNAME/configuration.nix`
+
+2) Rebuild and upgrade, just to be sure. 
+`sudo nixos-rebuild boot --upgrade`
+
+3) Create nix per-user folder if it doesn't exist.
+`sudo mkdir /nix/var/nix/profiles/per-user/USERNAME`
+`sudo chown USERNAME:root /nix/var/nix/profiles/per-user/USERNAME`
+
+4) Make sure to reboot when doing things like these, even step 3).
