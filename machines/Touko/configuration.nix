@@ -30,6 +30,6 @@
   networking.hostName = "Touko";
 
   # The danger setting; see 'default-configuration.nix' for details.
-  system.stateVersion = "19.09";
+  system.stateVersion = "20.03";
 
 }
