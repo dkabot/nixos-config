@@ -5,7 +5,7 @@
 {
   # Apply base GNOME settings.
   imports = [
-    ../../gnome.nix
+    ../../gnome
   ];
 
 }

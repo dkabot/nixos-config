@@ -3,23 +3,11 @@
 { config, pkgs, ... }:
 
 {
-  # Apply base GNOME settings.
+  # Apply base GNOME settings, plus tap-to-click and the arc-menu hack.
   imports = [
-    ../../gnome.nix
+    ../../gnome
+    ../../gnome/arc-menu-hidpi.nix
+    ../../gnome/tap-to-click.nix
   ];
-
-  home-manager.users.naomi = {
-    dconf.enable = true;
-    dconf.settings = {
-      # Double arc-menu height to hackily account for hidpi. This would break horribly on external monitors, though...
-      "org/gnome/shell/extensions/arc-menu" = {
-        menu-height = 1100;
-      };
-      # Enable tap to click, as this touchpad really needs it.
-      "org/gnome/desktop/peripherals/touchpad" = {
-        tap-to-click = true;
-      };
-    };
-  };
 
 }
