@@ -10,7 +10,7 @@
       # GUI Utilities
       meld filezilla syncthing-gtk gimp sidequest
       # Terminal Utilities
-      neofetch
+      neofetch steam-run
       # Games
       multimc steam lutris #retroarch
     ];
