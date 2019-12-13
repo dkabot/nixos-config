@@ -56,7 +56,9 @@
     "usbhid"
     "hid_multitouch"
     "intel_ipts"
-    "surface_acpi"
+    "surface_sam_ssh"
+    "surface_sam_san"
+    "surface_sam_vhf"
   ];
 
 }

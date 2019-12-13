@@ -6,7 +6,7 @@ let
   linux-surface = builtins.fetchGit {
     url = "https://github.com/qzed/linux-surface.git";
     ref = "master";
-    rev = "dcf51e95e7d04886371f8af1ec05104697f129f6";
+    rev = "9e132617b877f6dbc8c042e493c2d6ed5ddf45ea";
   } + /patches/5.3;
 
 in
@@ -38,13 +38,13 @@ in
       name = "surface-acpi";
       patch = "${linux-surface}/0001-surface-acpi.patch";
       extraConfig = ''
-          SURFACE_ACPI m
-          SURFACE_ACPI_SSH y
-          SURFACE_ACPI_SSH_DEBUG_DEVICE y
-          SURFACE_ACPI_SAN y
-          SURFACE_ACPI_VHF y
-          SURFACE_ACPI_DTX y
-          SURFACE_ACPI_SID y
+          SURFACE_SAM m
+          SURFACE_SAM_SAN m
+          SURFACE_SAM_SSH m
+          SURFACE_SAM_SSH_DEBUG_DEVICE y
+          SURFACE_SAM_VHF m
+          SURFACE_SAM_DTX m
+          SURFACE_SAM_SID m
         '';
     } {
       name = "buttons";
@@ -80,6 +80,9 @@ in
           INTEL_IPTS m
           INTEL_IPTS_SURFACE m
         '';
+    } {
+      name = "ioremap_uc";
+      patch = "${linux-surface}/0010-ioremap_uc.patch";
     } {
       name = "misc-surface-config"; # These configs are unrelated to any of the above modules, so splititng them out.
       patch = null;
