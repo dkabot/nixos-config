@@ -2,16 +2,16 @@
 
 rustPlatform.buildRustPackage rec {
   name = "linux-surface-control";
-  version = "0.2.4";
+  version = "0.2.5";
 
   src = fetchFromGitHub {
     owner = "qzed";
     repo = "linux-surface-control";
-    rev = "639e889aa2a47f8c1dc1c1eb7ed339a72231117c";
-    sha256 = "1z2d8dvai5aqxqdhd8kf7gfyaalmdjhs57mn2l911kw52fjp25i5";
+    rev = "f8df274deaac59fbadc70da0bc5beb9c6b3f17b9";
+    sha256 = "155wricmigyyiw03lng5xpvisxgcf9sq8wmg31009bjqba114y3l";
   };
 
-  cargoSha256 = "0g0xvrjw4hwsnbvzqpkn3hhczlp5r2dzx1cqj9z2c8sz3r07ap0q";
+  cargoSha256 = "16w34wpgs2lv5mm5ph3h7qrij065asikqm32h17anm4i8rzjyvmw";
 
   meta = with lib; {
     description = "Control various aspects of Microsoft Surface devices on Linux from the Command-Line.";
