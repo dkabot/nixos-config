@@ -1,6 +1,6 @@
 # NixOS system-specific configuration file for Miluiel.
 
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -16,6 +16,9 @@
   # Enable nVidia proprietary drivers.
   services.xserver.videoDrivers = [ "nvidia" ];
   services.xserver.displayManager.gdm.wayland = false;
+
+  # Use a more recent kernel than 4.19 to ensure hardware support.
+  boot.kernelPackages = pkgs.linuxPackages_5_4;
 
   # LUKS configuration.
   boot.initrd.luks.devices = [
