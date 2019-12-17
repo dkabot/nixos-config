@@ -16,7 +16,7 @@
       # Extensions.
       gnomeExtensions.dash-to-panel gnomeExtensions.arc-menu
       # GNOME-specific applications.
-      gnome3.gnome-tweaks
+      gnome3.gnome-tweaks syncthing-gtk
     ];
 
     # Various GNOME settings.
