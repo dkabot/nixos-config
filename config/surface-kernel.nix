@@ -18,18 +18,18 @@ in
   ];
 
   # Set the kernel version.
-  boot.kernelPackages = pkgs.linuxPackages_5_3;
+  #boot.kernelPackages = pkgs.linuxPackages_5_3;
   # Template for if a specific subversion is necessary.
-  #boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_5_3.override {
-  #  argsOverride = rec {
-  #    version = "5.3.6";
-  #    modDirVersion = "5.3.6"; # Needs to end in .0 if there's no .X
-  #    src = fetchurl {
-  #      url = "mirror://kernel/linux/kernel/v5.x/linux-${version}.tar.xz";
-  #      sha256 = "07zcfpj6ras7mmazny5xjwf8v6l5hwdgnla21sqpppl48ylj2h78";
-  #    };
-  #  };
-  #});
+  boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_5_3.override {
+    argsOverride = rec {
+      version = "5.3.15";
+      modDirVersion = "5.3.15"; # Needs to end in .0 if there's no .X
+      src = pkgs.fetchurl {
+        url = "mirror://kernel/linux/kernel/v5.x/linux-${version}.tar.xz";
+        sha256 = "15qidl06lyfylx1b43b4wz2zfkr4000bkr7ialslmb7yi7mamj6f";
+      };
+    };
+  });
 
   # Define the kernel patches. The following URLs proved highly useful in knowing what config options are needed:
   # https://github.com/StollD/fedora-linux-surface/blob/master/config.surface
