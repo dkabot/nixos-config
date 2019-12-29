@@ -19,13 +19,13 @@
 
   # Add control package.
   environment.systemPackages = with pkgs; [
-    linux-surface-control
+    surface-control
   ];
 
   # Enable GPU switching.
   hardware.bumblebee = {
     enable = true;
-    pmMethod = "none"; # Using linux-surface-control to control power; leaving this on "auto" installs bbswitch, which we don't need.
+    pmMethod = "none"; # Using surface-control to control power; leaving this on "auto" installs bbswitch, which we don't need.
   };
 
   # Enable Surface firmware.

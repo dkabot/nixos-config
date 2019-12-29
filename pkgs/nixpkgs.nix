@@ -9,7 +9,7 @@
 
     overlays = [ (self: super: {
         # Surface-related packages
-        linux-surface-control = super.callPackage ./linux-surface-control { };
+        surface-control = super.callPackage ./surface-control { };
         surface-firmware = super.callPackage ./surface-firmware { };
         # Theming
         chicago95 = super.callPackage ./chicago95 { };
