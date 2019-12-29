@@ -9,7 +9,7 @@
       ../../config/gnome.nix # GNOME desktop.
       # Apply HiDPI console.
       ../../config/hidpi-console.nix
-      # Apply qzed kernel.
+      # Apply Surface kernel.
       ../../config/surface-kernel.nix
       # Log naomi in automatically.
       (import ../../config/gdm-autologin.nix { inherit config; username = "naomi"; })

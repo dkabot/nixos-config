@@ -1,10 +1,10 @@
-# Builds the qzed kernel for Surface devices.
+# Builds the linux-surface kernel for Surface devices.
 
 { config, pkgs, ... }:
 
 let
   linux-surface = builtins.fetchGit {
-    url = "https://github.com/qzed/linux-surface.git";
+    url = "https://github.com/linux-surface/linux-surface.git";
     ref = "master";
     rev = "9e132617b877f6dbc8c042e493c2d6ed5ddf45ea";
   } + /patches/5.3;

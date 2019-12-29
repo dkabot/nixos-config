@@ -9,7 +9,7 @@ stdenv.mkDerivation {
   srcs = [
     # Latest master
     (fetchFromGitHub {
-      owner = "qzed";
+      owner = "linux-surface";
       name = "master";
       repo = "linux-surface";
       rev = "0984748ad55175d07eeca6f5617f84b42bbc657f";
@@ -17,7 +17,7 @@ stdenv.mkDerivation {
     })
     # Last commit before extra firmwares were removed
     (fetchFromGitHub {
-      owner = "qzed";
+      owner = "linux-surface";
       name = "legacy-firmware";
       repo = "linux-surface";
       rev = "8c3acded2d6eedd41ac7b3f126a49e4627879248";
@@ -40,7 +40,7 @@ stdenv.mkDerivation {
 
   meta = with stdenv.lib; {
     description = "Firmware for Surface devices";
-    homepage = https://github.com/qzed/linux-surface;
+    homepage = https://github.com/linux-surface/linux-surface;
     license = licenses.unfreeRedistributableFirmware;
     platforms = with platforms; linux;
   };
