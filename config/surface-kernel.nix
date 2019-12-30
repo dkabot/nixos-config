@@ -6,7 +6,7 @@ let
   linux-surface = builtins.fetchGit {
     url = "https://github.com/linux-surface/linux-surface.git";
     ref = "master";
-    rev = "9e132617b877f6dbc8c042e493c2d6ed5ddf45ea";
+    rev = "289f9d67e36573cd5fe79936850e8a24ff482195";
   } + /patches/5.3;
 
 in
@@ -18,18 +18,18 @@ in
   ];
 
   # Set the kernel version.
-  #boot.kernelPackages = pkgs.linuxPackages_5_3;
+  boot.kernelPackages = pkgs.linuxPackages_5_3;
   # Template for if a specific subversion is necessary.
-  boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_5_3.override {
-    argsOverride = rec {
-      version = "5.3.15";
-      modDirVersion = "5.3.15"; # Needs to end in .0 if there's no .X
-      src = pkgs.fetchurl {
-        url = "mirror://kernel/linux/kernel/v5.x/linux-${version}.tar.xz";
-        sha256 = "15qidl06lyfylx1b43b4wz2zfkr4000bkr7ialslmb7yi7mamj6f";
-      };
-    };
-  });
+  #boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_5_3.override {
+  #  argsOverride = rec {
+  #    version = "5.3.18";
+  #    modDirVersion = "5.3.18"; # Needs to end in .0 if there's no .X
+  #    src = pkgs.fetchurl {
+  #      url = "mirror://kernel/linux/kernel/v5.x/linux-${version}.tar.xz";
+  #      sha256 = "15qidl06lyfylx1b43b4wz2zfkr4000bkr7ialslmb7yi7mamj6f";
+  #    };
+  #  };
+  #});
 
   # Define the kernel patches. The following URLs proved highly useful in knowing what config options are needed:
   # https://github.com/StollD/fedora-linux-surface/blob/master/config.surface
@@ -45,44 +45,42 @@ in
           SURFACE_SAM_VHF m
           SURFACE_SAM_DTX m
           SURFACE_SAM_SID m
+          SURFACE_SAM_HPS m
         '';
     } {
       name = "buttons";
       patch = "${linux-surface}/0002-buttons.patch";
     } {
-      name = "surfacebook2-dgpu";
-      patch = "${linux-surface}/0003-surfacebook2-dgpu.patch";
-      extraConfig = ''
-          SURFACE_BOOK2_DGPU_HPS m
-        '';
-    } {
       name = "hid";
-      patch = "${linux-surface}/0004-hid.patch";
+      patch = "${linux-surface}/0003-hid.patch";
     } {
       name = "surface3-power";
-      patch = "${linux-surface}/0005-surface3-power.patch";
+      patch = "${linux-surface}/0004-surface3-power.patch";
       extraConfig = ''
           SURFACE_3_POWER_OPREGION m
         '';
     } {
       name = "surface-lte";
-      patch = "${linux-surface}/0006-surface-lte.patch";
+      patch = "${linux-surface}/0005-surface-lte.patch";
     } {
       name = "wifi";
-      patch = "${linux-surface}/0007-wifi.patch";
+      patch = "${linux-surface}/0006-wifi.patch";
     } {
       name = "legacy-i915";
-      patch = "${linux-surface}/0008-legacy-i915.patch";
+      patch = "${linux-surface}/0007-legacy-i915.patch";
     } {
       name = "ipts";
-      patch = "${linux-surface}/0009-ipts.patch";
+      patch = "${linux-surface}/0008-ipts.patch";
       extraConfig = ''
           INTEL_IPTS m
           INTEL_IPTS_SURFACE m
         '';
     } {
       name = "ioremap_uc";
-      patch = "${linux-surface}/0010-ioremap_uc.patch";
+      patch = "${linux-surface}/0009-ioremap_uc.patch";
+    } {
+      name = "surface3-spi-dma";
+      patch = "${linux-surface}/0010-surface3-spi-dma.patch";
     } {
       name = "misc-surface-config"; # These configs are unrelated to any of the above modules, so splititng them out.
       patch = null;
