@@ -8,7 +8,7 @@
       ./hardware-configuration.nix
       ../../config/gnome.nix # GNOME Desktop.
       # Log naomi in automatically.
-      (import ../../config/gdm-autologin.nix { inherit config; username = "naomi"; })
+      (import ../../config/autologin.nix { inherit config; displayManager = "gdm"; username = "naomi"; })
       # Machine-specific home configuration for naomi.
       ../../users/naomi/machines/Miluiel/home.nix
   ];
