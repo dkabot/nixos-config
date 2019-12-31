@@ -19,6 +19,10 @@
       gnome3.gnome-tweaks syncthing-gtk
     ];
 
+    # Apply default applications.
+    xdg.enable = true;
+    xdg.configFile."mimeapps.list".source = ../dotfiles/gnome/mimeapps.list;
+
     # Various GNOME settings.
     dconf.enable = true;
     dconf.settings = {

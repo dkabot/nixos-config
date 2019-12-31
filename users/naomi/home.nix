@@ -32,8 +32,8 @@
       EDITOR = "nano";
     };
 
+    # Copy wallpaper image into .config
     xdg.enable = true;
-    xdg.configFile."mimeapps.list".source = ./dotfiles/mimeapps.list;
     xdg.configFile."background.png".source = ./dotfiles/background.png;
 
   };
