@@ -6,16 +6,15 @@
   imports = [
       # Import the results of the hardware scan and apply common configuration.
       ./hardware-configuration.nix
-      ../../config/gnome.nix # GNOME Desktop.
+      ../../config/plasma.nix # KDE Plasma Desktop.
       # Log naomi in automatically.
-      (import ../../config/autologin.nix { inherit config; displayManager = "gdm"; username = "naomi"; })
+      (import ../../config/autologin.nix { inherit config; displayManager = "sddm"; username = "naomi"; })
       # Machine-specific home configuration for naomi.
       ../../users/naomi/machines/Miluiel/home.nix
   ];
 
   # Enable nVidia proprietary drivers.
   services.xserver.videoDrivers = [ "nvidia" ];
-  services.xserver.displayManager.gdm.wayland = false;
 
   # Use a more recent kernel than 4.19 to ensure hardware support.
   boot.kernelPackages = pkgs.linuxPackages_5_4;
