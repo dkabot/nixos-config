@@ -15,7 +15,7 @@
   # Add additional applications.
   environment.systemPackages = with pkgs; [
     # Basic tools not installed by default.
-    vlc notepadqq spectacle
+    vlc notepadqq spectacle okular gwenview ark
   ];
 
 }
