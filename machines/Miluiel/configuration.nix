@@ -16,6 +16,16 @@
   # Enable nVidia proprietary drivers.
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  # Monitor arrangement. Positioning options don't seem to want to work, not sure why. Still useful for setting primary monitor.
+    services.xserver.xrandrHeads = [
+    { output = "DP-4"; primary = true; }
+    { output = "DP-1"; #monitorConfig =
+      #''
+      #  Option "Position" "2560 590"
+      #''
+    }
+  ];
+
   # Use a more recent kernel than 4.19 to ensure hardware support.
   boot.kernelPackages = pkgs.linuxPackages_5_4;
 
