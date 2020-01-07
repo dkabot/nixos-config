@@ -44,6 +44,8 @@ stdenv.mkDerivation rec {
 
   sourceRoot = ".";
 
+  patches = [ ./dark_titlebar_color.patch ];
+
   installPhase = ''
     # Plasma components
     # Aurorae window border theme
