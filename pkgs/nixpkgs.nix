@@ -16,6 +16,7 @@
         sweet = super.callPackage ./sweet { };
         candy-icons = super.callPackage ./candy-icons { };
         sweet-folders = super.callPackage ./sweet-folders { };
+        breeze-enhanced = super.libsForQt5.callPackage ./breeze-enhanced { };
         # Applications
         sidequest = super.callPackage ./sidequest { };
       }

@@ -1,0 +1,181 @@
+--- a/breezebutton.cpp
++++ b/breezebutton.cpp
+@@ -209,16 +209,16 @@
+                         if (d && qGray(d->titleBarColor().rgb()) > 100)
+                         {
+                             grad.setColorAt(0, isInactive ? inactiveCol
+-                                                          : QColor(255, 92, 87));
+-                            grad.setColorAt(1, isInactive ? inactiveCol
+-                                                          : QColor(233, 84, 79));
++                                                          : QColor(255, 66, 105));
++                            grad.setColorAt(1, isInactive ? inactiveCol
++                                                          : QColor(255, 75, 43));
+                         }
+                         else
+                         {
+                             grad.setColorAt(0, isInactive ? inactiveCol
+-                                                          : QColor(250, 100, 102));
+-                            grad.setColorAt(1, isInactive ? inactiveCol
+-                                                          : QColor(230, 92, 94));
++                                                          : QColor(255, 66, 105));
++                            grad.setColorAt(1, isInactive ? inactiveCol
++                                                          : QColor(255, 75, 43));
+                         }
+                         painter->setBrush( QBrush(grad) );
+                         painter->setPen( Qt::NoPen );
+@@ -257,24 +257,24 @@
+                         if (d && qGray(d->titleBarColor().rgb()) > 100)
+                         {
+                             grad.setColorAt(0, isChecked() ? isInactive ? inactiveCol
+-                                                                        : QColor(67, 198, 176)
++                                                                        : QColor(209, 0, 221)
+                                                            : isInactive ? inactiveCol
+-                                                                        : QColor(40, 211, 63));
++                                                                        : QColor(209, 0, 221));
+                             grad.setColorAt(1, isChecked() ? isInactive ? inactiveCol
+-                                                                        : QColor(60, 178, 159)
++                                                                        : QColor(136, 0, 254)
+                                                            : isInactive ? inactiveCol
+-                                                                        : QColor(36, 191, 57));
++                                                                        : QColor(136, 0, 254));
+                         }
+                         else
+                         {
+                             grad.setColorAt(0, isChecked() ? isInactive ? inactiveCol
+-                                                                        : QColor(67, 198, 176)
++                                                                        : QColor(209, 0, 221)
+                                                            : isInactive ? inactiveCol
+-                                                                        : QColor(124, 198, 67));
++                                                                        : QColor(209, 0, 221));
+                             grad.setColorAt(1, isChecked() ? isInactive ? inactiveCol
+-                                                                        : QColor(60, 178, 159)
++                                                                        : QColor(136, 0, 254)
+                                                            : isInactive ? inactiveCol
+-                                                                        : QColor(111, 178, 60));
++                                                                        : QColor(136, 0, 254));
+                         }
+                         painter->setBrush( QBrush(grad) );
+                         painter->setPen( Qt::NoPen );
+@@ -325,16 +325,16 @@
+                         if (d && qGray(d->titleBarColor().rgb()) > 100)
+                         { // yellow isn't good with light backgrounds
+                             grad.setColorAt(0, isInactive ? inactiveCol
+-                                                          : QColor(243, 176, 43));
+-                            grad.setColorAt(1, isInactive ? inactiveCol
+-                                                          : QColor(223, 162, 39));
++                                                          : QColor(247, 240, 7));
++                            grad.setColorAt(1, isInactive ? inactiveCol
++                                                          : QColor(255, 187, 36));
+                         }
+                         else
+                         {
+                             grad.setColorAt(0, isInactive ? inactiveCol
+-                                                          : QColor(237, 198, 81));
+-                            grad.setColorAt(1, isInactive ? inactiveCol
+-                                                          : QColor(217, 181, 74));
++                                                          : QColor(247, 240, 7));
++                            grad.setColorAt(1, isInactive ? inactiveCol
++                                                          : QColor(255, 187, 36));
+                         }
+                         painter->setBrush( QBrush(grad) );
+                         painter->setPen( Qt::NoPen );
+@@ -853,23 +853,23 @@
+                 if( type() == DecorationButtonType::Close )
+                 {
+                     if (qGray(d->titleBarColor().rgb()) > 100)
+-                        col = QColor(254, 73, 66);
+-                    else
+-                        col = QColor(240, 77, 80);
++                        col = QColor(255, 72, 65);
++                    else
++                        col = QColor(255, 72, 65);
+                 }
+                 else if( type() == DecorationButtonType::Maximize)
+                 {
+                     if (qGray(d->titleBarColor().rgb()) > 100)
+-                        col = isChecked() ? QColor(0, 188, 154) : QColor(7, 201, 33);
+-                    else
+-                        col = isChecked() ? QColor(0, 188, 154) : QColor(101, 188, 34);
++                        col = isChecked() ? QColor(171, 0, 238) : QColor(171, 0, 238);
++                    else
++                        col = isChecked() ? QColor(171, 0, 238) : QColor(171, 0, 238);
+                 }
+                 else if( type() == DecorationButtonType::Minimize )
+                 {
+                     if (qGray(d->titleBarColor().rgb()) > 100)
+-                        col = QColor(233, 160, 13);
+-                    else
+-                        col = QColor(227, 185, 59);
++                        col = QColor(252, 207, 25);
++                    else
++                        col = QColor(252, 207, 25);
+                 }
+                 else if( type() == DecorationButtonType::ApplicationMenu ) {
+                     if (qGray(d->titleBarColor().rgb()) > 100)
+@@ -893,23 +893,23 @@
+                 if( type() == DecorationButtonType::Close )
+                 {
+                     if (qGray(d->titleBarColor().rgb()) > 100)
+-                        col = QColor(254, 95, 87);
+-                    else
+-                        col = QColor(240, 96, 97);
++                        col = QColor(255, 72, 65);
++                    else
++                        col = QColor(255, 72, 65);
+                 }
+                 else if( type() == DecorationButtonType::Maximize)
+                 {
+                     if (qGray(d->titleBarColor().rgb()) > 100)
+-                        col = isChecked() ? QColor(64, 188, 168) : QColor(39, 201, 63);
+-                    else
+-                        col = isChecked() ? QColor(64, 188, 168) : QColor(116, 188, 64);
++                        col = isChecked() ? QColor(171, 0, 238) : QColor(171, 0, 238);
++                    else
++                        col = isChecked() ? QColor(171, 0, 238) : QColor(171, 0, 238);
+                 }
+                 else if( type() == DecorationButtonType::Minimize )
+                 {
+                     if (qGray(d->titleBarColor().rgb()) > 100)
+-                        col = QColor(233, 172, 41);
+-                    else
+-                        col = QColor(227, 191, 78);
++                        col = QColor(252, 207, 25);
++                    else
++                        col = QColor(252, 207, 25);
+                 }
+                 else if( type() == DecorationButtonType::ApplicationMenu ) {
+                     if (qGray(d->titleBarColor().rgb()) > 100)
+@@ -939,23 +939,23 @@
+                 if( type() == DecorationButtonType::Close )
+                 {
+                     if (qGray(d->titleBarColor().rgb()) > 100)
+-                        col = QColor(254, 95, 87);
+-                    else
+-                        col = QColor(240, 96, 97);
++                        col = QColor(255, 72, 65);
++                    else
++                        col = QColor(255, 72, 65);
+                 }
+                 else if( type() == DecorationButtonType::Maximize)
+                 {
+                     if (qGray(d->titleBarColor().rgb()) > 100)
+-                        col = isChecked() ? QColor(64, 188, 168) : QColor(39, 201, 63);
+-                    else
+-                        col = isChecked() ? QColor(64, 188, 168) : QColor(116, 188, 64);
++                        col = isChecked() ? QColor(171, 0, 238) : QColor(171, 0, 238);
++                    else
++                        col = isChecked() ? QColor(171, 0, 238) : QColor(171, 0, 238);
+                 }
+                 else if( type() == DecorationButtonType::Minimize )
+                 {
+                     if (qGray(d->titleBarColor().rgb()) > 100)
+-                        col = QColor(233, 172, 41);
+-                    else
+-                        col = QColor(227, 191, 78);
++                        col = QColor(252, 207, 25);
++                    else
++                        col = QColor(252, 207, 25);
+                 }
+                 else if( type() == DecorationButtonType::ApplicationMenu ) {
+                     if (qGray(d->titleBarColor().rgb()) > 100)
+

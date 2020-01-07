@@ -8,7 +8,7 @@
       # Kvantum-manager for Kvantum theme support.
       libsForQt5.qtstyleplugin-kvantum
       # Theme packages (home-manager gtk module uses dconf and thus won't work).
-      sweet sweet-folders candy-icons zafiro-icons
+      sweet sweet-folders candy-icons zafiro-icons breeze-enhanced
     ];
 
     # Apply default applications.
