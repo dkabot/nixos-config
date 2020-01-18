@@ -7,6 +7,7 @@
       # Import the results of the hardware scan and apply common configuration.
       ./hardware-configuration.nix
       ../../config/plasma.nix # KDE Plasma Desktop.
+      ../../config/systemd-boot.nix # systemd-boot bootloader.
       # Log naomi in automatically.
       (import ../../config/autologin.nix { inherit config; displayManager = "sddm"; username = "naomi"; })
       # Machine-specific home configuration for naomi.
@@ -30,14 +31,13 @@
   boot.kernelPackages = pkgs.linuxPackages_5_4;
 
   # LUKS configuration.
-  boot.initrd.luks.devices = [
-    {
-      name = "Miluiel-crypt";
+  boot.initrd.luks.devices = {
+    Miluiel-crypt = {
       device = "/dev/disk/by-uuid/4a8e9b56-23cc-4fa8-8021-1f6d3c39777d";
       preLVM = true;
       allowDiscards = true;
-    }
-  ];
+    };
+  };
 
   # Set the hostname.
   networking.hostName = "Miluiel";

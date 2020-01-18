@@ -7,6 +7,7 @@
       # Import the results of the hardware scan and apply common configuration.
       ./hardware-configuration.nix
       ../../config/gnome.nix # GNOME desktop.
+      ../../config/systemd-boot.nix # systemd-boot bootloader.
       # Apply HiDPI console.
       ../../config/hidpi-console.nix
       # Apply Surface kernel.
@@ -34,14 +35,13 @@
   ];
 
   # LUKS configuration.
-  boot.initrd.luks.devices = [
-    {
-      name = "Kagamiin-crypt";
+  boot.initrd.luks.devices = {
+    Kagamiin-crypt = {
       device = "/dev/disk/by-uuid/518663b3-5a71-49bb-b2a8-1ba7ed5d2c14";
       preLVM = true;
       allowDiscards = true;
-    }
-  ];
+    };
+  };
 
   # Set the hostname.
   networking.hostName = "Kagamiin";

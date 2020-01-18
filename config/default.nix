@@ -10,11 +10,6 @@
     ../users
   ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.timeout = 3;
-
   # Use a tmpfs for /tmp.
   boot.tmpOnTmpfs = true;
 

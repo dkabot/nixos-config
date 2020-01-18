@@ -7,6 +7,7 @@
       # Import the results of the hardware scan and apply common configuration.
       ./hardware-configuration.nix
       ../../config/gnome.nix # GNOME Desktop.
+      ../../config/systemd-boot.nix # systemd-boot bootloader.
       # Apply HiDPI console.
       ../../config/hidpi-console.nix
       # Apply Surface kernel.
@@ -23,14 +24,13 @@
   ];
 
   # LUKS configuration.
-  boot.initrd.luks.devices = [
-    {
-      name = "Mimi-crypt";
+  boot.initrd.luks.devices = {
+    Mimi-crypt = {
       device = "/dev/disk/by-uuid/8f8dfe77-fc6a-4283-a4e9-1bef81c98b19";
       preLVM = true;
       allowDiscards = true;
-    }
-  ];
+    };
+  };
 
   # Set the hostname.
   networking.hostName = "Mimi";
