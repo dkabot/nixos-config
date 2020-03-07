@@ -7,6 +7,7 @@
   imports = [
     ../../gnome
     ../../gnome/framebuffer-scale.nix
+    ../../gnome/tap-to-click.nix
   ];
 
 }
