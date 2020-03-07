@@ -18,6 +18,10 @@
       ../../users/naomi/machines/Mimi/home.nix
   ];
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  virtualisation.docker.enable = true;
+  users.users.naomi.extraGroups = [ "docker" ];
+
   # Enable Surface firmware.
   hardware.firmware = with pkgs; [
     surface-firmware
