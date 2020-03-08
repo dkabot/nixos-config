@@ -24,7 +24,10 @@
   };
 
   # 32-bit OpenGL support for Steam, etc.
-  hardware.opengl.driSupport32Bit = true;
+  hardware.opengl.driSupport32Bit = if builtins.currentSystem == "x86_64-linux"
+    then true
+    else false
+  ;
 
   # Enable X (or Wayland, depending, but it's the same setting).
   services.xserver.enable = true;

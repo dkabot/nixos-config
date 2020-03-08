@@ -4,7 +4,11 @@
 {
   home-manager.users.naomi = {
     # User-scope packages; not neeeded system-wide.
-    home.packages = with pkgs; [
+    # The if statement is an ugly hack but it seems to work?
+    home.packages = with pkgs;
+    # Packages for x86_64
+    if builtins.currentSystem == "x86_64-linux" then
+    [
       # Electron
       discord slack bitwarden
       # GUI Utilities
@@ -13,6 +17,15 @@
       neofetch steam-run
       # Games
       multimc steam lutris #retroarch
+    ]
+    # Packages for aarch64 (only other option atm).
+    else [
+      # GUI Utilities
+      meld filezilla gimp
+      # Terminal Utilities
+      neofetch
+      # Games
+      multimc
     ];
 
     # Firefox could be added as a package above, but this allows for expansion if desired.
