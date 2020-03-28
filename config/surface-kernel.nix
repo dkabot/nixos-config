@@ -6,7 +6,7 @@ let
   linux-surface = builtins.fetchGit {
     url = "https://github.com/linux-surface/linux-surface.git";
     ref = "master";
-    rev = "0287820f4f4e352628f526c401cf57c89cf0d9dd";
+    rev = "ffebc8b3c062ecd553b55b465d0e7fe9a9995f82";
   } + /patches/5.5;
 
 in
@@ -20,13 +20,13 @@ in
   # Set the kernel version.
   #boot.kernelPackages = pkgs.linuxPackages_5_4;
   # Template for if a specific subversion is necessary.
-  boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_5_4.override {
+  boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_5_5.override {
     argsOverride = rec {
-      version = "5.5.8";
-      modDirVersion = "5.5.8"; # Needs to end in .0 if there's no .X
+      version = "5.5.13";
+      modDirVersion = "5.5.13"; # Needs to end in .0 if there's no .X
       src = pkgs.fetchurl {
         url = "mirror://kernel/linux/kernel/v5.x/linux-${version}.tar.xz";
-        sha256 = "01pw0gfafbsds6vq26qynffwvqm4khs953k1b6rrz8wris9zddp5";
+        sha256 = "1qjf18qywzrfdzwpgpf6m0w0bil8rbc9hby8473ckzvbl0a3cfqz";
       };
     };
   });
@@ -52,6 +52,7 @@ in
       name = "surface-sam";
       patch = "${linux-surface}/0004-surface-sam.patch";
       extraConfig = ''
+          GPIO_SYSFS y # Required for SURFACE_SAM_HPS
           SURFACE_SAM m
           SURFACE_SAM_SSH m
           SURFACE_SAM_SSH_DEBUG_DEVICE y
@@ -78,12 +79,17 @@ in
           TOUCHSCREEN_IPTS m
         '';
     } {
-      name = "misc-surface-config"; # These configs are unrelated to any of the above modules, so splititng them out.
+      name = "misc-surface-config"; # Additional configs that don't easily go under a patch.
       patch = null;
       extraConfig = ''
-          # Required for the build process to not fail the SURFACE_ACPI_X options with "unused option".
+          # Required for the build process to not fail the SURFACE_SAM_X options with "unused option".
           SERIAL_DEV_BUS y
           SERIAL_DEV_CTRL_TTYPORT y
+          # Configs labeled as "misc" in the repo.
+          INPUT_SOC_BUTTON_ARRAY m
+          SURFACE_3_POWER_OPREGION m
+          SURFACE_3_BUTTON m
+          SURFACE_PRO3_BUTTON m
         '';
     }
   ];
