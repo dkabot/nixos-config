@@ -83,7 +83,7 @@
       };
       # Arc Menu settings.
       "org/gnome/shell/extensions/arc-menu" = {
-        enable-pinned-apps = false; # Show full application menu instead of pins.
+        default-menu-view = "Categories_List"; # Show full application menu instead of pins.
         menu-hotkey = "Super_L"; # Open with left super key.
         multi-monitor = true; # Enable multi monitor support.
         show-software-shortcut = false; # Hide GNOME Software shortcut.

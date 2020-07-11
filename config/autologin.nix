@@ -1,10 +1,10 @@
 # Display manager autologin configuration.
 
-{ config, displayManager, username}:
+{ config, username}:
 
 {
   # Enable 'username' autologin.
-  services.xserver.displayManager.${displayManager}.autoLogin = {
+  services.xserver.displayManager.autoLogin = {
     enable = true;
     user = username;
   };
