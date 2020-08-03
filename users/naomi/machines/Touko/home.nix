@@ -6,6 +6,7 @@
   # Apply base GNOME settings.
   imports = [
     ../../gnome
+    ../../gnome/tap-to-click.nix
   ];
 
 }

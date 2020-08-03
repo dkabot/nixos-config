@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "sweet-folders";
-  version = "8fe64a7";
+  version = "d50fbe3d93df4c494958c773b681ab36049935a1";
 
   src = fetchFromGitHub {
     owner = "EliverLara";
     repo = "Sweet-folders";
     rev = version;
-    sha256 = "0lkh6sak24iw9zvmfbrn8axf0x9xbh6vln96icx7r2zk2sg9p4b5";
+    sha256 = "0qk41ga323qfrkjw0qmsq04s974wnar91yf6chj4w9m2x88k0c6w";
   };
 
   nativeBuildInputs = [ gtk3 ];

@@ -65,7 +65,6 @@
       # Dash to Panel settings.
       "org/gnome/shell/extensions/dash-to-panel" = {
         panel-size = 40; # Panel height.
-        location-clock = "STATUSRIGHT"; # Clock location, all the way to the right (though Show Desktop is further right).
         appicon-margin = 7; # Distance between favorite/task icons.
         click-action = "TOGGLE-SHOWPREVIEW"; # On task click, toggle minimize/shown if single window, or show previews if multiple.
         show-window-previews-timeout = 500; # Wait 500ms to show previews on hover.

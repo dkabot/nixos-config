@@ -13,7 +13,7 @@
   services.xserver.desktopManager.gnome3.enable = true;
   services.dbus.packages = with pkgs; [ gnome3.dconf ];
   # Exclude Totem, so Celluloid can be used instead.
-  environment.gnome3.excludePackages = [ pkgs.gnome3.totem ];
+  environment.gnome3.excludePackages = [ pkgs.gnome3.totem pkgs.gnome3.epiphany ];
 
   # Add Celluloid.
   environment.systemPackages = with pkgs; [
