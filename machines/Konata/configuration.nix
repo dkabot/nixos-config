@@ -26,6 +26,9 @@
   # Set the hostname.
   networking.hostName = "Konata";
 
+  # Enable microcode updates.
+  hardware.cpu.intel.updateMicrocode = true;
+
   # The danger setting; see 'default-configuration.nix' for details.
   system.stateVersion = "20.09";
 
