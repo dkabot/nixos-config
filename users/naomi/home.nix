@@ -10,9 +10,9 @@
     if builtins.currentSystem == "x86_64-linux" then
     [
       # Electron
-      discord slack bitwarden
+      discord slack bitwarden etcher
       # GUI Utilities
-      meld filezilla gimp sidequest
+      meld filezilla gimp sidequest cura
       # Terminal Utilities
       neofetch steam-run
       # Games
