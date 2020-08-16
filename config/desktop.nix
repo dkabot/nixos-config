@@ -43,6 +43,9 @@
     tapping = true;
   };
 
+  # Enable USB for ADB/Fastboot
+  services.udev.packages = [ pkgs.android-udev-rules ];
+
   # Enable touch scrolling in Firefox.
   environment.variables = {
     MOZ_USE_XINPUT2 = "1";
