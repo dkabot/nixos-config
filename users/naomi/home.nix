@@ -12,7 +12,7 @@
       # Electron
       discord slack bitwarden etcher
       # GUI Utilities
-      meld filezilla gimp sidequest cura prusa-slicer
+      meld filezilla gimp sidequest cura prusa-slicer woeusb
       # Terminal Utilities
       neofetch steam-run
       # Games
