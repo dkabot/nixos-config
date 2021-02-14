@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, gtk3 }:
+{ stdenv, lib, fetchFromGitHub, gtk3 }:
 
 stdenv.mkDerivation rec {
   pname = "sweet-folders";
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
     done
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Folder icons from the Sweet GTK Theme for Linux desktop environments.";
     homepage = https://github.com/EliverLara/Sweet-folders;
     license = licenses.gpl3;

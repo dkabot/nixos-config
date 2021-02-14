@@ -36,8 +36,8 @@
   services.xserver.desktopManager.xterm.enable = false;
 
   # Enable touchpad support.
-  services.xserver.libinput = {
-    enable = true;
+  services.xserver.libinput.enable = true;
+  services.xserver.libinput.touchpad = {
     clickMethod = "clickfinger";
     naturalScrolling = true;
     tapping = true;

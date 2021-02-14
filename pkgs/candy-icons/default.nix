@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, gtk3 }:
+{ stdenv, lib, fetchFromGitHub, gtk3 }:
 
 stdenv.mkDerivation rec {
   pname = "candy-icons";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
     done
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Sweet gradient icons.";
     homepage = https://github.com/EliverLara/candy-icons;
     platforms = platforms.linux;
