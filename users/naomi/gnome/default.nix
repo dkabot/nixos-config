@@ -16,7 +16,7 @@
       # Extensions.
       gnomeExtensions.dash-to-panel gnomeExtensions.arc-menu
       # GNOME-specific applications.
-      gnome3.gnome-tweaks syncthing-gtk
+      gnome3.gnome-tweaks #syncthing-gtk # broken?
     ];
 
     # Apply default applications.
@@ -79,7 +79,7 @@
         scroll-icon-action = "NOTHING"; # Don't change application windows on icon scroll.
         hot-keys = true; # Enable Super + <num> hotkeys.
         show-show-apps-button = false; # Hide Applications button, for Arc-Menu
-        panel-element-positions = ''{"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'';
+        panel-element-positions = ''{"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'';
       };
       # Arc Menu settings.
       "org/gnome/shell/extensions/arc-menu" = {
