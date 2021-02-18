@@ -14,7 +14,7 @@
       # Additional icon themes relied upon by Sweet-Purple.
       candy-icons zafiro-icons
       # Extensions.
-      gnomeExtensions.dash-to-panel gnomeExtensions.arc-menu
+      gnomeExtensions.dash-to-panel gnomeExtensions.arcmenu
       # GNOME-specific applications.
       gnome3.gnome-tweaks #syncthing-gtk # broken?
     ];
@@ -30,7 +30,7 @@
         # Set the favorites list in the Dash (or Panel).
         favorite-apps = [ "firefox.desktop" "org.gnome.Nautilus.desktop" ];
         # Enable extensions.
-        enabled-extensions = [ "user-theme@gnome-shell-extensions.gcampax.github.com" "dash-to-panel@jderose9.github.com" "arc-menu@linxgem33.com" ];
+        enabled-extensions = [ "user-theme@gnome-shell-extensions.gcampax.github.com" "dash-to-panel@jderose9.github.com" "arcmenu@arcmenu.com" ];
       };
       # Prevent automatic sleep while on AC power.
       "org/gnome/settings-daemon/plugins/power" = {
@@ -82,7 +82,7 @@
         panel-element-positions = ''{"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'';
       };
       # Arc Menu settings.
-      "org/gnome/shell/extensions/arc-menu" = {
+      "org/gnome/shell/extensions/arcmenu" = {
         default-menu-view = "Categories_List"; # Show full application menu instead of pins.
         menu-hotkey = "Super_L"; # Open with left super key.
         multi-monitor = true; # Enable multi monitor support.

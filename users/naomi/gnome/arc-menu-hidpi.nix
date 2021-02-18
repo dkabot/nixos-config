@@ -5,7 +5,7 @@
   home-manager.users.naomi = {
     dconf.enable = true;
     dconf.settings = {
-      "org/gnome/shell/extensions/arc-menu" = {
+      "org/gnome/shell/extensions/arcmenu" = {
         menu-height = 1100;
       };
     };
