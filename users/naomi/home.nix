@@ -12,7 +12,7 @@
       # Electron
       discord slack bitwarden etcher
       # GUI Utilities
-      meld filezilla gimp sidequest cura prusa-slicer woeusb
+      meld filezilla gimp sidequest cura prusa-slicer woeusb git-cola
       # Terminal Utilities
       neofetch steam-run
       # Games
@@ -31,9 +31,6 @@
 
     # Firefox could be added as a package above, but this allows for expansion if desired.
     programs.firefox.enable = true;
-
-    # Enable SyncThing service.
-    services.syncthing.enable = true;
 
     # Basic git configuration.
     programs.git = {

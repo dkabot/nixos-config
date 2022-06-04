@@ -16,12 +16,21 @@
       # Extensions.
       gnomeExtensions.dash-to-panel gnomeExtensions.arcmenu
       # GNOME-specific applications.
-      gnome.gnome-tweaks #syncthing-gtk # broken?
+      gnome.gnome-tweaks
     ];
 
     # Apply default applications.
     xdg.enable = true;
     xdg.configFile."mimeapps.list".source = ../dotfiles/gnome/mimeapps.list;
+
+    # Set text editor for git-cola.
+    programs.git.includes = [
+      { contents = {
+        gui = {
+          editor = "gnome-text-editor";
+        };
+      }; }
+    ];
 
     # Various GNOME settings.
     dconf.enable = true;
