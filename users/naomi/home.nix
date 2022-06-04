@@ -16,16 +16,17 @@
       # Terminal Utilities
       neofetch steam-run
       # Games
-      multimc steam lutris #retroarch
+      polymc steam lutris #retroarch
     ]
     # Packages for aarch64 (only other option atm).
-    else [
+    else
+    [
       # GUI Utilities
       meld filezilla gimp
       # Terminal Utilities
       neofetch
       # Games
-      multimc
+      polymc
     ];
 
     # Firefox could be added as a package above, but this allows for expansion if desired.

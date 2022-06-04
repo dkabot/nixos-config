@@ -10,10 +10,10 @@
 
   # Enable GNOME desktop environment.
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome3.enable = true;
-  services.dbus.packages = with pkgs; [ gnome3.dconf ];
+  services.xserver.desktopManager.gnome.enable = true;
+  services.dbus.packages = with pkgs; [ dconf ];
   # Exclude Totem, so Celluloid can be used instead.
-  environment.gnome3.excludePackages = [ pkgs.gnome3.totem pkgs.gnome3.epiphany ];
+  environment.gnome.excludePackages = [ pkgs.gnome.totem pkgs.gnome.epiphany ];
 
   # Add Celluloid.
   environment.systemPackages = with pkgs; [

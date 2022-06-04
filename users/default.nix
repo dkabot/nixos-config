@@ -5,8 +5,8 @@
 let
   home-manager = builtins.fetchGit {
     url = "https://github.com/nix-community/home-manager.git";
-    rev = "1ee1d01daa19b3a6d16b5fb680c31a2bc110ce24";
-    #ref = "release-21.03";
+    rev = "684e85d01d333be91c4875baebb05b93c7d2ffaa";
+    #ref = "release-21.11";
   };
   readHashedPassword = file:
     lib.fileContents file;
@@ -25,9 +25,6 @@ in
   users.mutableUsers = false;
 
   # Apply the root password, if one is set.
-  # lib.mkIf seems to require entire blocks to work, so this is the best method I know of offhand.
-  users.users.root.hashedPassword = (if builtins.pathExists ./root.hashedPassword
-   then readHashedPassword ./root.hashedPassword
-   else null);
+  users.users.root.hashedPassword = lib.mkIf (builtins.pathExists ./root.hashedPassword) (readHashedPassword ./root.hashedPassword);
 
 }

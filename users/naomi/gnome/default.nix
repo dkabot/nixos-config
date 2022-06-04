@@ -16,7 +16,7 @@
       # Extensions.
       gnomeExtensions.dash-to-panel gnomeExtensions.arcmenu
       # GNOME-specific applications.
-      gnome3.gnome-tweaks #syncthing-gtk # broken?
+      gnome.gnome-tweaks #syncthing-gtk # broken?
     ];
 
     # Apply default applications.
@@ -46,6 +46,7 @@
       # Set desktop and lock screen backgrounds.
       "org/gnome/desktop/background" = {
         picture-uri = "file:///home/naomi/.config/background.png";
+        picture-uri-dark = "file:///home/naomi/.config/background.png";
       };
       "org/gnome/desktop/screensaver" = {
         picture-uri = "file:///home/naomi/.config/background.png";
@@ -55,7 +56,9 @@
         button-layout = "appmenu:minimize,maximize,close";
       };
       # Set 12 hour clock format.
+      # Set 12 hour clock format and dark color scheme.
       "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
         clock-format = "12h";
       };
       # Apply shell theme.

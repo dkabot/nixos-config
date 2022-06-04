@@ -17,8 +17,6 @@
     enable = true;
     # Full PulseAudio package is necessary for bluetooth audio support.
     package = pkgs.pulseaudioFull;
-    # Add extra modules for nicer Bluetooth codec support.
-    extraModules = [ pkgs.pulseaudio-modules-bt ];
     # 32-bit PulseAudio support for Steam, etc.
     support32Bit = true;
   };
