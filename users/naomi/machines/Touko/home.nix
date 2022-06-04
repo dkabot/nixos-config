@@ -3,9 +3,10 @@
 { config, pkgs, ... }:
 
 {
-  # Apply base GNOME settings.
+  # Apply base GNOME settings, fake Windows layout, and tap-to-click.
   imports = [
     ../../gnome
+    ../../gnome/fake-windows.nix
     ../../gnome/tap-to-click.nix
   ];
 
