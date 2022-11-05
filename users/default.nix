@@ -5,8 +5,8 @@
 let
   home-manager = builtins.fetchGit {
     url = "https://github.com/nix-community/home-manager.git";
-    rev = "684e85d01d333be91c4875baebb05b93c7d2ffaa";
-    #ref = "release-21.11";
+    rev = "93335810751f0404fe424e61ad58bc8e94bf8e9d";
+    #ref = "release-22.11";
   };
   readHashedPassword = file:
     lib.fileContents file;

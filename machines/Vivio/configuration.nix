@@ -6,7 +6,7 @@
 let
   nixos-hardware = builtins.fetchGit {
     url = "https://github.com/NixOS/nixos-hardware.git";
-    rev = "0cab18a48de7914ef8cad35dca0bb36868f3e1af";
+    rev = "9b98a70d46b109bcc82bbafdd0c918330d791fed";
     ref = "master";
   };
 

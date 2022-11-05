@@ -16,7 +16,7 @@
       # Terminal Utilities
       neofetch steam-run
       # Games
-      polymc steam lutris #retroarch
+      prismlauncher steam lutris #retroarch
     ]
     # Packages for aarch64 (only other option atm).
     else
@@ -26,7 +26,7 @@
       # Terminal Utilities
       neofetch
       # Games
-      polymc
+      prismlauncher
     ];
 
     # Firefox could be added as a package above, but this allows for expansion if desired.
@@ -42,6 +42,9 @@
     home.sessionVariables = {
       EDITOR = "nano";
     };
+
+    # Previously implied default, needs to remain such.
+    home.stateVersion = "18.09";
 
     # Copy wallpaper image into .config
     xdg.enable = true;

@@ -20,10 +20,10 @@
   time.timeZone = "America/New_York";
 
   # Automatically optimize the Nix store.
-  nix.autoOptimiseStore = true;
+  nix.settings.auto-optimise-store = true;
 
   # Use sandboxing when building.
-  nix.useSandbox = true;
+  nix.settings.sandbox = true;
 
   # Add basic packages for system-wide scope.
   environment.systemPackages = with pkgs; [
