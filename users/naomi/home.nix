@@ -12,7 +12,7 @@
       # Electron
       discord slack bitwarden etcher
       # GUI Utilities
-      meld filezilla gimp sidequest cura prusa-slicer woeusb git-cola
+      firefox-wayland meld filezilla gimp sidequest cura prusa-slicer woeusb git-cola
       # Terminal Utilities
       neofetch steam-run
       # Games
@@ -22,15 +22,19 @@
     else
     [
       # GUI Utilities
-      meld filezilla gimp
+      firefox-wayland meld filezilla gimp
       # Terminal Utilities
       neofetch
       # Games
       prismlauncher
     ];
 
-    # Firefox could be added as a package above, but this allows for expansion if desired.
-    programs.firefox.enable = true;
+    # Firefox could be added as a package above, and currently must be to use `firefox-wayland`. TODO reopen issue on home-manager
+    #programs.firefox = {
+    #  enable = true;
+    #  # Set up for Wayland usage
+    #  package = pkgs.firefox-wayland;
+    #};
 
     # Basic git configuration.
     programs.git = {
@@ -41,6 +45,8 @@
 
     home.sessionVariables = {
       EDITOR = "nano";
+      # For Firefox
+      MOZ_ENABLE_WAYLAND = 1;
     };
 
     # Previously implied default, needs to remain such.
