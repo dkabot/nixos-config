@@ -26,6 +26,11 @@ in
       ../../users/naomi/machines/Vivio/home.nix
   ];
 
+  # Delay automatic login to work around loading in X11 at all times.
+  services.xserver.displayManager.gdm.autoLogin.delay = 1;
+  # An even hackier way of doing the above, in case the above fails.
+  #services.xserver.displayManager.job.preStart = "sleep 5";
+
   # This has to be false for Tow-Boot as it stands.
   boot.loader.efi.canTouchEfiVariables  = false;
 
